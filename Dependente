@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    float salario, novo_salario, reajuste;
+    int tempo_servico, dependentes;
+
+    // Entrada de dados
+    printf("Digite o salário do funcionário: R$ ");
+    scanf("%f", &salario);
+    printf("Digite o tempo de serviço (em anos): ");
+    scanf("%d", &tempo_servico);
+    printf("Digite o número de dependentes: ");
+    scanf("%d", &dependentes);
+
+    // Verificar se o funcionário tem direito ao reajuste
+    if (tempo_servico >= 4 && salario <= 5000 && dependentes >= 1) {
+        // Calcular o reajuste
+        reajuste = salario * 0.30;
+        novo_salario = salario + reajuste;
+        printf("Reajuste concedido!\n");
+        printf("Valor do reajuste: R$ %.2f\n", reajuste);
+        printf("Novo salário: R$ %.2f\n", novo_salario);
+    } else {
+        printf("Não tem direito ao reajuste.\n");
+    }
+
+    return 0;
+}

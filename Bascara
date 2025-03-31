@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    double a, b, c, delta, x1, x2;
+
+    // Entrada dos coeficientes
+    printf("Digite os valores de a, b e c: ");
+    if (scanf("%lf %lf %lf", &a, &b, &c) != 3) {
+        printf("Erro na leitura dos valores. Certifique-se de inserir três números.\n");
+        return 1;
+    }
+
+    // Exibir os valores lidos (para depuração)
+    printf("Valores lidos: a = %.2lf, b = %.2lf, c = %.2lf\n", a, b, c);
+
+    // Verifica se 'a' é zero
+    if (a == 0) {
+        printf("Impossível calcular: 'a' não pode ser zero.\n");
+        return 0;
+    }
+
+    // Calcula o discriminante
+    delta = (b * b) - (4 * a * c);
+
+    // Exibir o valor de delta para depuração
+    printf("Delta calculado: %.2lf\n", delta);
+
+    // Verifica se o delta é negativo
+    if (delta < 0) {
+        printf("Impossível calcular: Delta é negativo.\n");
+    } else {
+        // Calcula as raízes
+        x1 = (-b + sqrt(delta)) / (2 * a);
+        x2 = (-b - sqrt(delta)) / (2 * a);
+
+        // Exibe os resultados formatados corretamente
+        printf("x1 = %.2lf\n", x1);
+        printf("x2 = %.2lf\n", x2);
+    }
+
+    return 0;
+}

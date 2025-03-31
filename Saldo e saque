@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    float saldo, quantia;
+
+    // Entrada de dados
+    printf("Digite o saldo da conta: ");
+    scanf("%f", &saldo);
+    printf("Digite a quantia a ser retirada: ");
+    scanf("%f", &quantia);
+
+    // Verificação se o saque é possível
+    if (quantia > saldo) {
+        printf("Saldo insuficiente!\n");
+    } else {
+        saldo -= quantia;
+        printf("Saque realizado com sucesso! Saldo atualizado: %.2f\n", saldo);
+    }
+
+    return 0;
+}
